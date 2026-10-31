@@ -43,8 +43,10 @@ function json(res, code, obj) { send(res, code, JSON.stringify(obj), { 'Content-
 
 function serveFile(req, res, key) {
   const asset = path.basename(key);
-  let data = ['artifact-badges.js','artifact-badges.css'].includes(asset)
-    ? fs.readFileSync(path.join(__dirname,'artifact-assets',asset)) : FILES.get(key);
+  const slug = key.split('/')[0];
+  // Badge assets exist only beside a real preview page (same capability boundary as the page itself).
+  const isBadge = ['artifact-badges.js','artifact-badges.css'].includes(asset) && key === slug + '/' + asset && FILES.has(slug + '/index.html');
+  let data = isBadge ? fs.readFileSync(path.join(__dirname,'artifact-assets',asset)) : FILES.get(key);
   if (data && key.endsWith('.html')) {
     const assets = '<link rel="stylesheet" href="/p/' + key.split('/')[0] + '/artifact-badges.css"><script defer src="/p/' + key.split('/')[0] + '/artifact-badges.js"></script>';
     data = Buffer.from(data.toString('utf8').replace(/<\/head>/i,assets+'</head>'));
