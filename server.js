@@ -42,7 +42,15 @@ function send(res, code, body, headers = {}) {
 function json(res, code, obj) { send(res, code, JSON.stringify(obj), { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); }
 
 function serveFile(req, res, key) {
-  const data = FILES.get(key);
+  const asset = path.basename(key);
+  const slug = key.split('/')[0];
+  // Badge assets exist only beside a real preview page (same capability boundary as the page itself).
+  const isBadge = ['artifact-badges.js','artifact-badges.css'].includes(asset) && key === slug + '/' + asset && FILES.has(slug + '/index.html');
+  let data = isBadge ? fs.readFileSync(path.join(__dirname,'artifact-assets',asset)) : FILES.get(key);
+  if (data && key.endsWith('.html')) {
+    const assets = '<link rel="stylesheet" href="/p/' + key.split('/')[0] + '/artifact-badges.css"><script defer src="/p/' + key.split('/')[0] + '/artifact-badges.js"></script>';
+    data = Buffer.from(data.toString('utf8').replace(/<\/head>/i,assets+'</head>'));
+  }
   if (!data) return send(res, 404, 'not found', { 'Content-Type': 'text/plain' });
   const type = MIME[path.extname(key)] || 'application/octet-stream';
   const h = { 'Content-Type': type, 'Accept-Ranges': 'bytes', 'Cache-Control': 'private, max-age=300' };

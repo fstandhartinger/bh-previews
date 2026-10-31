@@ -4,6 +4,7 @@ RUN apk add --no-cache --upgrade ca-certificates-bundle
 ENV NODE_OPTIONS="--use-openssl-ca"
 WORKDIR /app
 COPY server.js bundle.enc ./
+COPY artifact-assets/ ./artifact-assets/
 ENV PORT=8080 NODE_ENV=production
 EXPOSE 8080
 USER node
