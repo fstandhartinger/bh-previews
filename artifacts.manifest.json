@@ -1,0 +1,257 @@
+{
+  "surface": "app:bh-previews",
+  "items": {
+    "app": {
+      "kind": "app",
+      "title": "Benchmark Heaven Vorschauen",
+      "summary": "Zeigt interne Vorschauen für geplante Benchmark-Seiten. Eine Vorschau ist keine veröffentlichte Rangliste.",
+      "selector": "header, h1",
+      "id": "56dbce",
+      "parent": null,
+      "url": "https://bh-previews.app.mintapis.com",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/bh-previews@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [
+        {
+          "rel": "related",
+          "to": "805c51"
+        }
+      ],
+      "access": "internal"
+    },
+    "release": {
+      "kind": "page",
+      "title": "Release-Vorschau",
+      "summary": "Zeigt die vorbereitete Release-Seite zur Prüfung. Aussagen und Werte sind im Kontext der zugrunde liegenden Quellen zu lesen.",
+      "selector": "main, body",
+      "id": "1081b1",
+      "parent": "56dbce",
+      "url": "https://bh-previews.app.mintapis.com",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/bh-previews@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [
+        {
+          "rel": "related",
+          "to": "8fca98"
+        }
+      ],
+      "access": "internal"
+    },
+    "capability": {
+      "id": "389609",
+      "kind": "panel",
+      "title": "Bildverständnis",
+      "summary": "Zeigt den gemessenen Bildverständniswert der Systeme. Der Wert ist zusammen mit der Methodik und den Quellen zu lesen.",
+      "parent": "56dbce",
+      "url": "https://bh-previews.app.mintapis.com",
+      "selector": "#jev-capability-title",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/bh-previews@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [],
+      "access": "internal"
+    },
+    "cost-speed": {
+      "id": "389dcc",
+      "kind": "panel",
+      "title": "Qualität, Kosten und Geschwindigkeit",
+      "summary": "Vergleicht die Qualität mit Kosten und Antwortzeit. Die Diagramme machen Zielkonflikte zwischen den Achsen sichtbar.",
+      "parent": "56dbce",
+      "url": "https://bh-previews.app.mintapis.com",
+      "selector": "#jev-bubbles-title",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/bh-previews@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [],
+      "access": "internal"
+    },
+    "composite": {
+      "id": "8fca98",
+      "kind": "panel",
+      "title": "Zusammengesetzter Vergleich",
+      "summary": "Zeigt den zusammengesetzten Vergleich der gemessenen Systeme. Die Achsen und deren Gewichtung bestimmen diesen Wert.",
+      "parent": "56dbce",
+      "url": "https://bh-previews.app.mintapis.com",
+      "selector": "#jev14-chart-title",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/bh-previews@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [
+        {
+          "rel": "related",
+          "to": "389609"
+        },
+        {
+          "rel": "related",
+          "to": "389dcc"
+        }
+      ],
+      "access": "internal"
+    },
+    "compare": {
+      "id": "4eea8f",
+      "kind": "panel",
+      "title": "Systemvergleich",
+      "summary": "Stellt zwei ausgewählte Systeme gegenüber. Die einzelnen Achsen erklären Unterschiede im Gesamtergebnis.",
+      "parent": "56dbce",
+      "url": "https://bh-previews.app.mintapis.com",
+      "selector": "#jev15-compare",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/bh-previews@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [],
+      "access": "internal"
+    },
+    "examples": {
+      "id": "c37022",
+      "kind": "panel",
+      "title": "Öffentliche Bildbeispiele",
+      "summary": "Zeigt Beispiele aus öffentlichen Aufgaben. Die Beispiele veranschaulichen die im Benchmark geprüften Fähigkeiten.",
+      "parent": "56dbce",
+      "url": "https://bh-previews.app.mintapis.com",
+      "selector": "#image-jev-examples-heading",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/bh-previews@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [],
+      "access": "internal"
+    },
+    "whatif-weights": {
+      "id": "3925ae",
+      "kind": "panel",
+      "title": "Gewichtung der Achsen",
+      "summary": "Steuert die Gewichtung im internen Was-wäre-wenn-Vergleich. Änderungen wirken nur auf die dargestellte Vorschau.",
+      "parent": "56dbce",
+      "url": "https://bh-previews.app.mintapis.com",
+      "selector": ".grid > .card:nth-child(1)",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/bh-previews@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [],
+      "access": "internal"
+    },
+    "whatif-intelligence": {
+      "id": "f70f67",
+      "kind": "panel",
+      "title": "Gewichtung der Aufgaben",
+      "summary": "Steuert die Aufgabentypen und Schwierigkeitsstufen im Vergleich. Die Auswahl verändert die berechnete Darstellung.",
+      "parent": "56dbce",
+      "url": "https://bh-previews.app.mintapis.com",
+      "selector": ".grid > .card:nth-child(2)",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/bh-previews@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [],
+      "access": "internal"
+    },
+    "whatif-economics": {
+      "id": "f21364",
+      "kind": "panel",
+      "title": "Korrekturen, Tempo und Kosten",
+      "summary": "Steuert Korrekturen sowie Geschwindigkeits- und Kostenannahmen. Die Auswahl ist eine explorative Vorschau.",
+      "parent": "56dbce",
+      "url": "https://bh-previews.app.mintapis.com",
+      "selector": ".grid > .card:nth-child(3)",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/bh-previews@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [],
+      "access": "internal"
+    },
+    "whatif-filters": {
+      "id": "1e057e",
+      "kind": "panel",
+      "title": "Filter und Vergleichsmaßstab",
+      "summary": "Begrenzt die angezeigten Systeme und wählt den Vergleichsmaßstab. Die Filter verändern die sichtbare Auswahl.",
+      "parent": "56dbce",
+      "url": "https://bh-previews.app.mintapis.com",
+      "selector": ".grid > .card:nth-child(4)",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/bh-previews@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [],
+      "access": "internal"
+    },
+    "whatif-ranking": {
+      "id": "c75f31",
+      "kind": "panel",
+      "title": "Explorative Rangliste",
+      "summary": "Zeigt die Rangliste unter den gewählten Annahmen. Diese Vorschau ist keine neue veröffentlichte Bewertung.",
+      "parent": "56dbce",
+      "url": "https://bh-previews.app.mintapis.com",
+      "selector": "#rank",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/bh-previews@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [
+        {
+          "rel": "depends_on",
+          "to": "3925ae"
+        },
+        {
+          "rel": "depends_on",
+          "to": "f70f67"
+        },
+        {
+          "rel": "depends_on",
+          "to": "f21364"
+        },
+        {
+          "rel": "depends_on",
+          "to": "1e057e"
+        }
+      ],
+      "access": "internal"
+    }
+  }
+}
