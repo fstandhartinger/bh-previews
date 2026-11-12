@@ -142,6 +142,8 @@ http.createServer((req, res) => {
     if (!m[2]) return send(res, 301, '', { Location: `/p/${m[1]}/` });
     let rel = decodeURIComponent(m[2].slice(1)) || 'index.html';
     if (rel.includes('..')) return send(res, 400, 'bad path');
+    // multi-page previews: a/ or a -> a/index.html (only for keys that would otherwise 404)
+    { const k = `${m[1]}/${rel}`; if (!FILES.has(k)) { const d = k.replace(/\/$/, '') + '/index.html'; if (FILES.has(d)) rel = d.slice(m[1].length + 1); } }
     return serveFile(req, res, `${m[1]}/${rel}`);
   }
   send(res, 404, 'not found', { 'Content-Type': 'text/plain' });
