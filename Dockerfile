@@ -8,4 +8,7 @@ COPY artifact-assets/ ./artifact-assets/
 ENV PORT=8080 NODE_ENV=production
 EXPOSE 8080
 USER node
-CMD ["node", "server.js"]
+# Structured JSON logs + request ids (logging standard, AGENTS.md; logkit/README.md). No IPs or user agents.
+COPY logkit ./logkit
+ENV LOG_APP=bh-previews LOG_IP=0 LOG_UA=0
+CMD ["node", "-r", "./logkit/logkit-preload.cjs", "server.js"]
